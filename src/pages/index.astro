@@ -1,0 +1,164 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BubbleProgressChart from "../components/BubbleProgressChart.astro";
+import TimelineComparator from "../components/TimelineComparator.astro";
+import StockTable from "../components/StockTable.astro";
+import { categories } from "../data/stocks";
+
+const title = "AI Bubble Tracker: Is AI in a Bubble?";
+const description =
+  "Track AI bubble risk, AI stock bubble signals, AI bubble burst risk, and whether the AI boom looks like the dot-com bubble.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Neutral AI market research</p>
+          <h1>AI Bubble Tracker</h1>
+          <p class="lede">
+            Track AI bubble risk, AI stock bubble signals, and whether the AI boom is starting
+            to look like the dot-com bubble across GPUs, CPUs, memory, storage, and data center infrastructure.
+          </p>
+          <div class="bubble-pills" aria-label="Tracked AI bubble themes">
+            <span>GPU heat</span>
+            <span>HBM squeeze</span>
+            <span>Capex fever</span>
+            <span>Dot-com echo</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button" href="/ai-bubble-burst/">Will It Burst?</a>
+            <a class="button secondary" href="/ai-bubble-chart/">View Chart</a>
+            <a class="button" href="/ai-bubble-vs-dot-com-bubble/">View Timeline</a>
+          </div>
+        </div>
+        <aside class="score-panel" aria-label="AI bubble risk score">
+          <div class="score-row">
+            <div>
+              <p class="eyebrow">Monthly manual update</p>
+              <h2>Bubble Risk Score</h2>
+            </div>
+            <div class="score">72<small>/100</small></div>
+          </div>
+          <div class="meter rocket-meter" aria-label="AI bubble risk score 72 out of 100">
+            <span></span>
+            <b aria-hidden="true">🚀</b>
+          </div>
+          <p class="lede">
+            Stage 3-4: capital market euphoria is visible, but revenue and infrastructure demand still matter.
+          </p>
+          <div class="risk-orbit" aria-label="Risk mix">
+            <div><span>Valuation</span><strong>High</strong></div>
+            <div><span>Revenue</span><strong>Real</strong></div>
+            <div><span>Search</span><strong>Rising</strong></div>
+          </div>
+          <div class="signal-grid">
+            <div class="signal hot"><span>GPU</span><strong>Very hot</strong></div>
+            <div class="signal mixed"><span>CPU</span><strong>Mixed</strong></div>
+            <div class="signal hot"><span>Memory & HBM</span><strong>Very hot</strong></div>
+            <div class="signal warm"><span>Storage</span><strong>Heating up</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section highlight-section">
+      <div class="shell">
+        <BubbleProgressChart />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Keyword hubs</p>
+            <h2>Start With the Highest-Signal Questions</h2>
+          </div>
+          <p>
+            The first SEO layer targets the strongest informational searches: AI bubble burst risk,
+            chart-based evidence, stock-market exposure, and the dot-com comparison.
+          </p>
+        </div>
+        <div class="category-grid">
+          <a class="category-card" href="/ai-bubble-burst/">
+            <span class="card-kicker">Pop watch</span>
+            <h3>AI Bubble Burst</h3>
+            <p>Track the evidence that would make the AI bubble burst or prove the boom is still supported by fundamentals.</p>
+          </a>
+          <a class="category-card" href="/when-will-the-ai-bubble-burst/">
+            <span class="card-kicker">Clock</span>
+            <h3>When Will It Burst?</h3>
+            <p>Compare the AI cycle with prior technology bubbles without pretending to predict an exact crash date.</p>
+          </a>
+          <a class="category-card" href="/ai-bubble-chart/">
+            <span class="card-kicker">Share asset</span>
+            <h3>AI Bubble Chart</h3>
+            <p>A shareable chart hub for the timeline, stage map, and stock bubble scorecard.</p>
+          </a>
+          <a class="category-card" href="/ai-stock-bubble/">
+            <span class="card-kicker">Watchlist</span>
+            <h3>AI Stock Bubble</h3>
+            <p>Follow Nvidia, AMD, Intel, Micron, SanDisk, SK Hynix, and Samsung across AI infrastructure categories.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Core asset</p>
+            <h2>AI Bubble Chart: Timeline vs Dot-Com</h2>
+          </div>
+          <p>
+            A side-by-side chart comparing the AI boom with the internet bubble cycle from 1994 to 2002.
+          </p>
+        </div>
+        <TimelineComparator />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Stock clusters</p>
+            <h2>Infrastructure Categories</h2>
+          </div>
+          <p>
+            The first coverage map starts with GPU, CPU, memory, and storage because AI infrastructure demand
+            spreads through the whole semiconductor stack.
+          </p>
+        </div>
+        <div class="category-grid">
+          {
+            Object.values(categories).map((category) => (
+              <a class="category-card" href={`/${category.slug}/`}>
+                <h3>{category.title}</h3>
+                <p>{category.description}</p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Coverage universe</p>
+            <h2>AI Stock Bubble Coverage</h2>
+          </div>
+          <p>
+            Editorial scores are for research and comparison. They are not investment advice or buy-sell signals.
+          </p>
+        </div>
+        <StockTable />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BubbleProgressChart from "../components/BubbleProgressChart.astro";
+import MethodologyPanel from "../components/MethodologyPanel.astro";
+import TimelineComparator from "../components/TimelineComparator.astro";
+
+const title = "AI Bubble vs Dot-Com Bubble: Timeline and Chart";
+const description =
+  "Compare the AI bubble vs dot-com bubble with a timeline chart across infrastructure, market euphoria, revenue, search interest, and capital expenditure.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <p class="eyebrow">Shareable research asset</p>
+        <h1>AI Bubble vs Dot-Com Bubble</h1>
+        <p class="lede">
+          A side-by-side tracker comparing the AI boom with the internet bubble cycle from 1994 to 2002.
+          The timeline does not predict a crash; it compares observable signals across two technology investment cycles.
+        </p>
+      </div>
+    </section>
+
+    <section class="section highlight-section">
+      <div class="shell">
+        <BubbleProgressChart />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <TimelineComparator />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <MethodologyPanel />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Methodology</p>
+            <h2>What This Timeline Measures</h2>
+          </div>
+          <p>
+            The comparison tracks infrastructure investment, public-market enthusiasm, valuation expansion,
+            revenue realization, retail search interest, and capital expenditure dependency.
+          </p>
+        </div>
+        <div class="category-grid">
+          <div class="category-card"><h3>Infrastructure</h3><p>Chips, servers, data centers, networking, memory, storage, and power capacity.</p></div>
+          <div class="category-card"><h3>Market</h3><p>Public-equity momentum, valuation expansion, IPO activity, and narrative broadening.</p></div>
+          <div class="category-card"><h3>Revenue</h3><p>Whether the boom is supported by durable sales, margins, and cash flow.</p></div>
+          <div class="category-card"><h3>Search</h3><p>Public attention and anxiety around terms such as AI bubble and AI stock bubble.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Suggested citation</p>
+            <h2>Reference This Chart</h2>
+          </div>
+          <p>
+            AI Bubble Tracker, “AI Bubble vs Dot-Com Bubble Timeline,” updated monthly.
+            https://aibubbletracker.com/ai-bubble-vs-dot-com-bubble/
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

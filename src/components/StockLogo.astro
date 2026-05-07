@@ -1,0 +1,14 @@
+---
+import type { StockProfile } from "../data/stocks";
+
+type Props = {
+  stock: StockProfile;
+  size?: "sm" | "lg";
+};
+
+const { stock, size = "sm" } = Astro.props;
+---
+
+<span class:list={["stock-logo", `stock-logo-${stock.logoTheme}`, `stock-logo-${size}`]} aria-hidden="true">
+  <span>{stock.logoText}</span>
+</span>

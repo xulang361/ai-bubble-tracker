@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StockTable from "../components/StockTable.astro";
+import { categories } from "../data/stocks";
+
+const title = "AI Stock Bubble: Nvidia, AMD, Intel, Micron, SK Hynix and Samsung";
+const description =
+  "Track AI stock bubble signals across GPU, CPU, memory, and storage companies including Nvidia, AMD, Intel, Micron, SanDisk, SK Hynix, and Samsung.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <p class="eyebrow">AI stock bubble tracker</p>
+        <h1>AI Stock Bubble</h1>
+        <p class="lede">
+          The AI stock bubble debate is not just about Nvidia. It now spans GPUs, CPUs,
+          HBM, DRAM, NAND, SSDs, foundry exposure, and the broader data center supply chain.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Stock clusters</p>
+            <h2>AI Infrastructure Categories</h2>
+          </div>
+          <p>
+            These categories match how AI capex flows through the semiconductor stack.
+          </p>
+        </div>
+        <div class="category-grid">
+          {
+            Object.values(categories).map((category) => (
+              <a class="category-card" href={`/${category.slug}/`}>
+                <h3>{category.title}</h3>
+                <p>{category.description}</p>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Comparison table</p>
+            <h2>AI Stock Bubble Watchlist</h2>
+          </div>
+          <p>
+            Editorial scores compare AI exposure, product relevance, valuation narrative dependency,
+            and the signals most likely to change the bubble debate.
+          </p>
+        </div>
+        <StockTable />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

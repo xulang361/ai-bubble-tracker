@@ -1,0 +1,46 @@
+---
+import type { StockCategory } from "../data/stocks";
+import { stocks } from "../data/stocks";
+import StockLogo from "./StockLogo.astro";
+
+type Props = {
+  category?: StockCategory;
+};
+
+const { category } = Astro.props;
+const rows = category ? stocks.filter((stock) => stock.categories.includes(category)) : stocks;
+---
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Ticker</th>
+        <th>Category</th>
+        <th>AI Exposure</th>
+        <th>Bubble Risk</th>
+        <th>Key Signal to Watch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((stock) => (
+          <tr>
+            <td>
+              <a class="company-link" href={`/${stock.slug}/`}>
+                <StockLogo stock={stock} />
+                <span><strong>{stock.company}</strong></span>
+              </a>
+            </td>
+            <td>{stock.ticker}</td>
+            <td>{stock.categories.join(", ")}</td>
+            <td>{stock.aiExposure}</td>
+            <td>{stock.riskScore}/100</td>
+            <td>{stock.watchSignal}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

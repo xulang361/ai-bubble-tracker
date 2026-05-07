@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BubbleProgressChart from "../components/BubbleProgressChart.astro";
+import MethodologyPanel from "../components/MethodologyPanel.astro";
+import TimelineComparator from "../components/TimelineComparator.astro";
+import StockTable from "../components/StockTable.astro";
+
+const title = "AI Bubble Chart: Timeline, Stocks and Dot-Com Comparison";
+const description =
+  "A shareable AI bubble chart comparing the AI cycle with the dot-com bubble, plus stock-market and infrastructure risk signals.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <p class="eyebrow">Shareable chart hub</p>
+        <h1>AI Bubble Chart</h1>
+        <p class="lede">
+          A chart-first view of the AI bubble debate: timeline, cycle stage, dot-com comparison,
+          and stock-market risk signals in one research dashboard.
+        </p>
+      </div>
+    </section>
+
+    <section class="section highlight-section">
+      <div class="shell">
+        <BubbleProgressChart />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Timeline chart</p>
+            <h2>AI Bubble vs Dot-Com Bubble</h2>
+          </div>
+          <p>
+            This is the core chart people can reference when discussing where AI sits in the bubble cycle.
+          </p>
+        </div>
+        <TimelineComparator />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <MethodologyPanel />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Stock chart input</p>
+            <h2>AI Stock Bubble Scorecard</h2>
+          </div>
+          <p>
+            The next version of this chart hub should add downloadable PNG and embeddable iframe versions.
+          </p>
+        </div>
+        <StockTable />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Citation</p>
+            <h2>Reference This Chart</h2>
+          </div>
+          <p>
+            AI Bubble Tracker, “AI Bubble Chart,” updated monthly.
+            https://aibubbletracker.com/ai-bubble-chart/
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

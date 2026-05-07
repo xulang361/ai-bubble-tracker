@@ -1,0 +1,88 @@
+---
+const sources = [
+  {
+    label: "OpenAI: ChatGPT launch date",
+    href: "https://openai.com/blog/chatgpt/"
+  },
+  {
+    label: "Web Design Museum: Netscape Navigator 1.0 release date",
+    href: "https://www.webdesignmuseum.org/software/netscape-navigator-1-0-in-1994"
+  },
+  {
+    label: "FRED: NASDAQ Composite daily close series",
+    href: "https://fred.stlouisfed.org/series/NASDAQCOM"
+  },
+  {
+    label: "Nasdaq: NASDAQ Composite index description",
+    href: "https://indexes.nasdaq.com/Index/Overview/COMP"
+  },
+  {
+    label: "Wired: March 10, 2000 Nasdaq peak reference",
+    href: "https://www.wired.com/2007/03/march-10-2000-pop/"
+  }
+];
+---
+
+<section class="methodology-panel" aria-label="Chart methodology and data sources">
+  <div class="methodology-copy">
+    <p class="eyebrow">Methodology</p>
+    <h2>How the Bubble Timeline Is Calculated</h2>
+    <p>
+      The chart compares two technology cycles on an indexed basis. The dot-com cycle starts with the
+      Netscape Navigator 1.0 release in December 1994. The AI cycle starts with the public ChatGPT release
+      on November 30, 2022. Both paths are normalized to 0% at launch and measured by percentage return
+      after launch, so the shape of each cycle is comparable even though the calendar years are different.
+    </p>
+  </div>
+
+  <div class="methodology-grid">
+    <div class="method-card">
+      <span>1</span>
+      <h3>Cycle Start Dates</h3>
+      <p>Netscape: December 15, 1994. ChatGPT: November 30, 2022. These dates define T=0 for each series.</p>
+    </div>
+    <div class="method-card">
+      <span>2</span>
+      <h3>Market Proxy</h3>
+      <p>The baseline proxy is the NASDAQ Composite because it is broad, technology-heavy, and historically available.</p>
+    </div>
+    <div class="method-card">
+      <span>3</span>
+      <h3>Weekly Frequency</h3>
+      <p>Daily closes are sampled to weekly observations to reduce noise while preserving the shape of each market cycle.</p>
+    </div>
+    <div class="method-card">
+      <span>4</span>
+      <h3>Indexed Return</h3>
+      <p>Return is calculated as current close divided by launch-date close minus one, then multiplied by 100.</p>
+    </div>
+    <div class="method-card">
+      <span>5</span>
+      <h3>858 Trading Days</h3>
+      <p>The comparison marker aligns each cycle at the same trading-day age, rather than the same calendar date.</p>
+    </div>
+    <div class="method-card">
+      <span>6</span>
+      <h3>Update Policy</h3>
+      <p>The first site version is manually updated monthly. A later version should replace chart anchors with a versioned CSV.</p>
+    </div>
+  </div>
+
+  <div class="formula-box">
+    <strong>Formula</strong>
+    <code>Indexed return = (weekly_close / launch_week_close - 1) * 100</code>
+  </div>
+
+  <div class="source-list">
+    <h3>Primary Sources</h3>
+    <ul>
+      {sources.map((source) => <li><a href={source.href} target="_blank" rel="noreferrer">{source.label}</a></li>)}
+    </ul>
+  </div>
+
+  <p class="method-note">
+    Current chart values are editorial research estimates pending a fully versioned source CSV. The methodology above
+    defines the production data process and should be used for the monthly update log. The chart is educational research,
+    not investment advice.
+  </p>
+</section>

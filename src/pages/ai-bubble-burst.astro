@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import MethodologyPanel from "../components/MethodologyPanel.astro";
+import TimelineComparator from "../components/TimelineComparator.astro";
+import StockTable from "../components/StockTable.astro";
+
+const title = "AI Bubble Burst: Signals, Risks and Stock Market Indicators";
+const description =
+  "Will the AI bubble burst? Track valuation, capex, revenue, GPU, memory, storage, and stock-market signals without investment hype.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">AI bubble burst risk</p>
+          <h1>Will the AI Bubble Burst?</h1>
+          <p class="lede">
+            The useful question is not whether AI is real. It is whether public-market expectations,
+            infrastructure spending, and valuation multiples have moved faster than durable cash flows.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="/when-will-the-ai-bubble-burst/">Timing Signals</a>
+            <a class="button secondary" href="/ai-bubble-chart/">View Chart</a>
+          </div>
+        </div>
+        <aside class="score-panel">
+          <p class="eyebrow">Current reading</p>
+          <h2>High, Not Broken</h2>
+          <p class="lede">
+            Our base case reads the AI cycle as Stage 3-4: euphoria is visible, but revenue evidence
+            remains stronger than it was for many dot-com companies near the peak.
+          </p>
+          <div class="signal-grid">
+            <div class="signal"><span>Valuation</span><strong>Elevated</strong></div>
+            <div class="signal"><span>Capex</span><strong>Extreme</strong></div>
+            <div class="signal"><span>Revenue</span><strong>Real</strong></div>
+            <div class="signal"><span>Cycle risk</span><strong>Rising</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Risk framework</p>
+            <h2>What Would Make the AI Bubble Burst?</h2>
+          </div>
+          <p>
+            A bubble usually breaks when narrative growth, financing conditions, and fundamentals stop moving together.
+          </p>
+        </div>
+        <div class="category-grid">
+          <div class="category-card"><h3>Capex Saturation</h3><p>Cloud providers slow GPU, memory, networking, or data center spending after overbuilding capacity.</p></div>
+          <div class="category-card"><h3>Margin Compression</h3><p>AI infrastructure suppliers lose pricing power as supply catches demand or customers push back.</p></div>
+          <div class="category-card"><h3>Revenue Gap</h3><p>Enterprise AI adoption grows, but software revenue fails to justify the infrastructure investment wave.</p></div>
+          <div class="category-card"><h3>Multiple Compression</h3><p>Stocks keep growing revenue, but valuation multiples fall as investors demand proof of returns.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Cycle context</p>
+            <h2>AI Bubble Burst Timeline</h2>
+          </div>
+          <p>
+            The dot-com bubble peaked after infrastructure, adoption, IPO activity, and retail enthusiasm all reinforced each other.
+          </p>
+        </div>
+        <TimelineComparator />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <MethodologyPanel />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Market surface</p>
+            <h2>AI Stock Bubble Watchlist</h2>
+          </div>
+          <p>
+            These editorial scores are comparison tools. They are not investment recommendations.
+          </p>
+        </div>
+        <StockTable />
+      </div>
+    </section>
+  </main>
+</BaseLayout>

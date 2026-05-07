@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimelineComparator from "../components/TimelineComparator.astro";
+
+const title = "When Will the AI Bubble Burst? Timeline and Warning Signals";
+const description =
+  "When will the AI bubble burst? Compare the AI cycle with the dot-com bubble and track the warning signals that matter most.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <p class="eyebrow">Timing and cycle analysis</p>
+        <h1>When Will the AI Bubble Burst?</h1>
+        <p class="lede">
+          No timeline can predict an exact burst date. The better approach is to track cycle stages:
+          infrastructure buildout, market euphoria, revenue verification, and eventual consolidation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Current stage</p>
+            <h2>Stage 3-4: Euphoria Meets Revenue Reality</h2>
+          </div>
+          <p>
+            AI infrastructure demand is real, but the market is increasingly asking whether capex returns,
+            software revenue, and semiconductor margins can justify the speed of the rally.
+          </p>
+        </div>
+        <TimelineComparator />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Warning signals</p>
+            <h2>Five Signals to Watch</h2>
+          </div>
+          <p>
+            The timing question becomes more useful when it is converted into observable signals.
+          </p>
+        </div>
+        <div class="category-grid">
+          <div class="category-card"><h3>Hyperscaler Slowdown</h3><p>Microsoft, Google, Meta, Amazon, or Oracle guide down data center capex.</p></div>
+          <div class="category-card"><h3>GPU Order Cuts</h3><p>Lead times shorten, inventory rises, or accelerator demand shifts from shortage to oversupply.</p></div>
+          <div class="category-card"><h3>HBM Price Reversal</h3><p>Memory suppliers lose pricing power after aggressive AI server supply expansion.</p></div>
+          <div class="category-card"><h3>AI App Revenue Gap</h3><p>Application-layer revenue fails to support the infrastructure investment narrative.</p></div>
+          <div class="category-card"><h3>Broad Multiple Compression</h3><p>Even high-quality AI stocks fall despite decent earnings because expectations were too high.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

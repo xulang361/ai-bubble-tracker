@@ -1,0 +1,54 @@
+---
+import { timelineEvents, stages } from "../data/timeline";
+
+const dotCom = timelineEvents.filter((event) => event.cycle === "Dot-Com");
+const ai = timelineEvents.filter((event) => event.cycle === "AI");
+const rows = Array.from({ length: Math.max(dotCom.length, ai.length) }, (_, index) => ({
+  dot: dotCom[index],
+  ai: ai[index]
+}));
+---
+
+<div class="timeline" aria-label="AI bubble and dot-com bubble timeline comparison">
+  <div class="timeline-header">
+    <div>Dot-Com</div>
+    <div>Internet Bubble Milestone</div>
+    <div>AI</div>
+    <div>AI Bubble Milestone</div>
+  </div>
+  {
+    rows.map(({ dot, ai }) => (
+      <div class="timeline-row">
+        <div class="timeline-year">{dot?.year ?? ""}</div>
+        <div>
+          {dot && (
+            <>
+              <p class="event-label">{dot.label}</p>
+              <p class="event-summary">{dot.summary}</p>
+            </>
+          )}
+        </div>
+        <div class="timeline-year">{ai?.year ?? ""}</div>
+        <div>
+          {ai && (
+            <>
+              <p class="event-label">{ai.label}</p>
+              <p class="event-summary">{ai.summary}</p>
+            </>
+          )}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div class="stage-strip" aria-label="Bubble cycle stages">
+  {
+    stages.map((stage, index) => (
+      <div class:list={["stage", index === 3 && "active"]}>
+        <span>Stage {index + 1}</span>
+        <strong>{stage}</strong>
+      </div>
+    ))
+  }
+</div>
