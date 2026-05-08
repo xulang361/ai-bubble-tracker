@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aibubbletracker.top/sitemap-index.xml

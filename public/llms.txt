@@ -1,0 +1,30 @@
+# AI Bubble Tracker
+
+AI Bubble Tracker is a neutral research dashboard for tracking AI bubble risk, AI stock bubble signals, AI bubble burst indicators, and the AI bubble vs dot-com bubble timeline.
+
+Canonical site: https://aibubbletracker.top
+Sitemap: https://aibubbletracker.top/sitemap-index.xml
+
+## Core Pages
+
+- Home: https://aibubbletracker.top/
+- AI Bubble Chart: https://aibubbletracker.top/ai-bubble-chart/
+- AI Bubble Burst: https://aibubbletracker.top/ai-bubble-burst/
+- AI Bubble vs Dot-Com Bubble: https://aibubbletracker.top/ai-bubble-vs-dot-com-bubble/
+- AI Stock Bubble: https://aibubbletracker.top/ai-stock-bubble/
+- Nvidia AI Bubble: https://aibubbletracker.top/nvidia-ai-bubble/
+
+## Positioning
+
+The site tracks observable market signals rather than making investment recommendations. It is for research and educational purposes only, not investment advice.
+
+## Primary Topics
+
+- AI bubble
+- AI bubble burst
+- AI bubble chart
+- AI bubble vs dot-com bubble
+- AI stock bubble
+- Nvidia AI bubble
+- AI semiconductor bubble
+- GPU, CPU, memory, and storage stocks
