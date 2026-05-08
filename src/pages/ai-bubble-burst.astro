@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FaqList from "../components/FaqList.astro";
 import MethodologyPanel from "../components/MethodologyPanel.astro";
 import TimelineComparator from "../components/TimelineComparator.astro";
 import StockTable from "../components/StockTable.astro";
@@ -7,6 +8,28 @@ import StockTable from "../components/StockTable.astro";
 const title = "AI Bubble Burst: Signals, Risks and Stock Market Indicators";
 const description =
   "Will the AI bubble burst? Track valuation, capex, revenue, GPU, memory, storage, and stock-market signals without investment hype.";
+const faqItems = [
+  {
+    question: "Will the AI bubble burst?",
+    answer:
+      "The AI bubble could burst if capex slows, AI revenue disappoints, or AI stock valuations compress faster than earnings grow. The page tracks signals rather than predicting a date."
+  },
+  {
+    question: "When will the AI bubble burst?",
+    answer:
+      "No reliable model can call the exact AI bubble burst date. A better approach is to watch weekly market behavior, hyperscaler capex, GPU demand, HBM pricing, and valuation multiples."
+  },
+  {
+    question: "Is the AI bubble already bursting?",
+    answer:
+      "The AI bubble is not clearly bursting while infrastructure revenue remains strong, but AI bubble bursting risk rises when leadership narrows and multiple compression spreads."
+  },
+  {
+    question: "What happens if the AI bubble bursts?",
+    answer:
+      "If the AI bubble bursts, the likely impact is not that AI disappears. More likely, weaker stocks reprice, capital spending slows, and durable AI infrastructure winners separate from hype."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,7 +40,7 @@ const description =
           <p class="eyebrow">AI bubble burst risk</p>
           <h1>Will the AI Bubble Burst?</h1>
           <p class="lede">
-            The useful question is not whether AI is real. It is whether public-market expectations,
+            The AI bubble burst question is not whether AI is real. It is whether public-market expectations,
             infrastructure spending, and valuation multiples have moved faster than durable cash flows.
           </p>
           <div class="hero-actions">
@@ -66,6 +89,27 @@ const description =
       <div class="shell">
         <div class="section-head">
           <div>
+            <p class="eyebrow">Burst signals</p>
+            <h2>Is the AI Bubble Bursting or Just Cooling?</h2>
+          </div>
+          <p>
+            AI bubble bursting risk increases when the market stops rewarding revenue growth, when AI capex
+            becomes harder to justify, and when AI stock bubble leaders fall despite strong headlines.
+          </p>
+        </div>
+        <div class="category-grid">
+          <div class="category-card"><h3>AI Bubble Burst Trigger</h3><p>A trigger could be a capex guide-down, GPU order slowdown, or evidence that AI application revenue lags infrastructure spending.</p></div>
+          <div class="category-card"><h3>AI Bubble Crash Risk</h3><p>Crash risk is highest when valuations, leverage, and sentiment all reverse at the same time.</p></div>
+          <div class="category-card"><h3>Soft Landing Scenario</h3><p>The AI bubble may cool without bursting if earnings grow into valuations and spending becomes more disciplined.</p></div>
+          <div class="category-card"><h3>Bubble Winners</h3><p>After a bubble resets, durable infrastructure suppliers can still compound, similar to internet leaders after the dot-com bubble.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
             <p class="eyebrow">Cycle context</p>
             <h2>AI Bubble Burst Timeline</h2>
           </div>
@@ -95,6 +139,12 @@ const description =
           </p>
         </div>
         <StockTable />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <FaqList title="AI Bubble Burst FAQ" items={faqItems} />
       </div>
     </section>
   </main>

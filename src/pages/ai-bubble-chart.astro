@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BubbleProgressChart from "../components/BubbleProgressChart.astro";
+import FaqList from "../components/FaqList.astro";
 import MethodologyPanel from "../components/MethodologyPanel.astro";
 import TimelineComparator from "../components/TimelineComparator.astro";
 import StockTable from "../components/StockTable.astro";
@@ -8,6 +9,23 @@ import StockTable from "../components/StockTable.astro";
 const title = "AI Bubble Chart: Timeline, Stocks and Dot-Com Comparison";
 const description =
   "A shareable AI bubble chart comparing the AI cycle with the dot-com bubble, plus stock-market and infrastructure risk signals.";
+const faqItems = [
+  {
+    question: "What is the AI bubble chart?",
+    answer:
+      "The AI bubble chart is a weekly indexed comparison of the AI market cycle after ChatGPT with the dot-com bubble cycle after Netscape."
+  },
+  {
+    question: "How should I read the AI bubble chart?",
+    answer:
+      "Read the AI bubble chart as a cycle comparison, not a crash forecast. It shows relative progress, market acceleration, and where AI sits versus the dot-com bubble timeline."
+  },
+  {
+    question: "Can I cite the AI bubble chart?",
+    answer:
+      "Yes. The chart is designed as a shareable AI bubble graph with a citation block, methodology, source links, and a monthly update policy."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,8 +35,8 @@ const description =
         <p class="eyebrow">Shareable chart hub</p>
         <h1>AI Bubble Chart</h1>
         <p class="lede">
-          A chart-first view of the AI bubble debate: timeline, cycle stage, dot-com comparison,
-          and stock-market risk signals in one research dashboard.
+          A chart-first view of the AI bubble debate: AI bubble chart, AI bubble timeline,
+          AI bubble vs dot-com bubble comparison, and stock-market risk signals in one research dashboard.
         </p>
       </div>
     </section>
@@ -62,6 +80,12 @@ const description =
           </p>
         </div>
         <StockTable />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <FaqList title="AI Bubble Chart FAQ" items={faqItems} />
       </div>
     </section>
 

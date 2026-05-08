@@ -1,11 +1,29 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FaqList from "../components/FaqList.astro";
 import StockTable from "../components/StockTable.astro";
 import { categories } from "../data/stocks";
 
 const title = "AI Stock Bubble: Nvidia, AMD, Intel, Micron, SK Hynix and Samsung";
 const description =
   "Track AI stock bubble signals across GPU, CPU, memory, and storage companies including Nvidia, AMD, Intel, Micron, SanDisk, SK Hynix, and Samsung.";
+const faqItems = [
+  {
+    question: "Are AI stocks in a bubble?",
+    answer:
+      "Some AI stocks show bubble-like signals, especially when valuation expansion outruns revenue growth. The AI stock bubble question should be judged stock by stock."
+  },
+  {
+    question: "Which AI bubble stocks are tracked here?",
+    answer:
+      "The AI stock bubble watchlist tracks Nvidia, AMD, Intel, Micron, SanDisk, SK Hynix, and Samsung across GPU, CPU, memory, and storage categories."
+  },
+  {
+    question: "Is Nvidia the whole AI stock bubble?",
+    answer:
+      "No. Nvidia is the anchor of the AI stock bubble debate, but HBM, DRAM, NAND, CPUs, data center storage, and capex suppliers also matter."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -15,7 +33,7 @@ const description =
         <p class="eyebrow">AI stock bubble tracker</p>
         <h1>AI Stock Bubble</h1>
         <p class="lede">
-          The AI stock bubble debate is not just about Nvidia. It now spans GPUs, CPUs,
+          The AI stock bubble debate is not just about Nvidia. The AI stock market bubble now spans GPUs, CPUs,
           HBM, DRAM, NAND, SSDs, foundry exposure, and the broader data center supply chain.
         </p>
       </div>
@@ -58,6 +76,12 @@ const description =
           </p>
         </div>
         <StockTable />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <FaqList title="AI Stock Bubble FAQ" items={faqItems} />
       </div>
     </section>
   </main>

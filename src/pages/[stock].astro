@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FaqList from "../components/FaqList.astro";
 import StockLogo from "../components/StockLogo.astro";
 import { stocks } from "../data/stocks";
 
@@ -17,6 +18,20 @@ type Props = {
 const { stock } = Astro.props;
 const title = `${stock.company} AI Bubble: Stock, Valuation and Infrastructure Signals`;
 const description = `Is ${stock.company} in an AI bubble? Track AI exposure, products, bubble risk, and the signals that matter for ${stock.ticker}.`;
+const faqItems = [
+  {
+    question: `Is ${stock.company} in an AI bubble?`,
+    answer: `${stock.company} has an AI bubble risk score of ${stock.riskScore}/100. The score reflects AI exposure, product relevance, valuation narrative dependency, and the next signal to watch.`
+  },
+  {
+    question: `What makes ${stock.company} part of the AI bubble debate?`,
+    answer: `${stock.company} is tied to the AI infrastructure cycle through ${stock.keyProducts}. That makes ${stock.ticker} relevant to AI bubble, AI stock bubble, and semiconductor cycle searches.`
+  },
+  {
+    question: `What should investors watch for ${stock.ticker}?`,
+    answer: `The key signal for ${stock.ticker} is ${stock.watchSignal}. This is research context only and not investment advice.`
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -30,8 +45,8 @@ const description = `Is ${stock.company} in an AI bubble? Track AI exposure, pro
             <h1>Is {stock.company} in an AI Bubble?</h1>
           </div>
           <p class="lede">
-            A neutral tracker for {stock.company}'s role in the AI infrastructure cycle, including AI exposure,
-            product relevance, bubble risk, and the signals to watch next.
+            A neutral tracker for the {stock.company} AI bubble debate, including {stock.ticker} stock exposure,
+            AI infrastructure products, bubble risk, and the signals to watch next.
           </p>
         </div>
         <aside class="score-panel">
@@ -54,11 +69,17 @@ const description = `Is ${stock.company} in an AI bubble? Track AI exposure, pro
     <section class="section">
       <div class="shell">
         <div class="category-grid">
-          <div class="category-card"><h3>AI Role</h3><p>{stock.keyProducts}</p></div>
-          <div class="category-card"><h3>What Bulls Watch</h3><p>Revenue growth, durable margins, product adoption, and customer expansion.</p></div>
-          <div class="category-card"><h3>What Bears Watch</h3><p>Valuation expansion, customer concentration, capex dependency, and cyclical oversupply.</p></div>
-          <div class="category-card"><h3>Next Signal</h3><p>{stock.watchSignal}</p></div>
+          <div class="category-card"><h3>{stock.company} AI Bubble Risk</h3><p>{stock.keyProducts}</p></div>
+          <div class="category-card"><h3>Why Bulls Defend {stock.ticker}</h3><p>Revenue growth, durable margins, product adoption, and customer expansion.</p></div>
+          <div class="category-card"><h3>Why Bears See AI Bubble Risk</h3><p>Valuation expansion, customer concentration, capex dependency, and cyclical oversupply.</p></div>
+          <div class="category-card"><h3>{stock.ticker} Signal to Watch</h3><p>{stock.watchSignal}</p></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <FaqList title={`${stock.company} AI Bubble FAQ`} items={faqItems} />
       </div>
     </section>
   </main>

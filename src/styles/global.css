@@ -639,6 +639,37 @@ p {
   font-size: 13px;
 }
 
+.faq-block {
+  border: 1px solid rgba(16, 20, 24, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 24px;
+  box-shadow: 0 16px 38px rgba(44, 62, 80, 0.06);
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 253, 0.98));
+  padding: 14px 16px;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.faq-list p {
+  color: var(--muted);
+  margin-top: 10px;
+  max-width: 900px;
+}
+
 .category-card p,
 .stock-card p {
   color: var(--muted);

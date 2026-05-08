@@ -1,0 +1,36 @@
+---
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+type Props = {
+  title?: string;
+  items: FaqItem[];
+};
+
+const { title = "FAQ", items } = Astro.props;
+---
+
+<section class="faq-block" aria-label={title}>
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Search questions</p>
+      <h2>{title}</h2>
+    </div>
+    <p>
+      Short answers for the terms investors search when they compare AI bubble risk,
+      AI stock bubble signals, and dot-com bubble parallels.
+    </p>
+  </div>
+  <div class="faq-list">
+    {
+      items.map((item) => (
+        <details>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

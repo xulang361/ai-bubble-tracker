@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BubbleProgressChart from "../components/BubbleProgressChart.astro";
+import FaqList from "../components/FaqList.astro";
 import TimelineComparator from "../components/TimelineComparator.astro";
 import StockTable from "../components/StockTable.astro";
 import { categories } from "../data/stocks";
@@ -8,6 +9,23 @@ import { categories } from "../data/stocks";
 const title = "AI Bubble Tracker: Is AI in a Bubble?";
 const description =
   "Track AI bubble risk, AI stock bubble signals, AI bubble burst risk, and whether the AI boom looks like the dot-com bubble.";
+const faqItems = [
+  {
+    question: "Is AI in a bubble?",
+    answer:
+      "AI may be in a partial bubble: infrastructure revenue is real, but AI bubble risk rises when stock valuations, hyperscaler capex, and investor expectations move faster than cash flows."
+  },
+  {
+    question: "What does AI Bubble Tracker measure?",
+    answer:
+      "AI Bubble Tracker follows AI bubble risk, AI stock bubble signals, AI bubble burst indicators, semiconductor demand, search interest, and the AI bubble vs dot-com bubble timeline."
+  },
+  {
+    question: "Is the AI stock bubble only about Nvidia?",
+    answer:
+      "No. Nvidia is central to the AI bubble debate, but the AI stock bubble also includes AMD, Intel, Micron, SanDisk, SK Hynix, Samsung, GPUs, CPUs, memory, and storage."
+  }
+];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -66,6 +84,27 @@ const description =
     <section class="section highlight-section">
       <div class="shell">
         <BubbleProgressChart />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">SEO research brief</p>
+            <h2>AI Bubble Risk, AI Stock Bubble Signals, and Dot-Com Parallels</h2>
+          </div>
+          <p>
+            AI Bubble Tracker is a neutral research dashboard built to answer whether AI is in a bubble,
+            whether the AI bubble could burst, and how today&apos;s AI stock bubble compares with the dot-com bubble.
+          </p>
+        </div>
+        <div class="category-grid">
+          <div class="category-card"><h3>AI Bubble Risk</h3><p>Track valuation, search interest, market euphoria, and whether the AI bubble debate is becoming more extreme.</p></div>
+          <div class="category-card"><h3>AI Bubble Burst Indicators</h3><p>Watch capex saturation, margin compression, revenue gaps, and the signals that could make the AI bubble burst.</p></div>
+          <div class="category-card"><h3>AI Stock Bubble Signals</h3><p>Compare Nvidia, AMD, Intel, Micron, SanDisk, SK Hynix, and Samsung across AI infrastructure exposure.</p></div>
+          <div class="category-card"><h3>AI Bubble Chart</h3><p>Use the AI bubble chart to compare ChatGPT-era market progress with the Netscape and dot-com bubble cycle.</p></div>
+        </div>
       </div>
     </section>
 
@@ -158,6 +197,12 @@ const description =
           </p>
         </div>
         <StockTable />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <FaqList title="AI Bubble Tracker FAQ" items={faqItems} />
       </div>
     </section>
   </main>
